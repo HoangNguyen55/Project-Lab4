@@ -13,6 +13,9 @@ void gui(), lab2(), lab3();
 
 int main()
 {
+    cout<<"Enter your name: \n";
+    cin>>name;
+    cout<<"Hello "<<name<<", please select the service:\n";
     gui();
 
     return 0;
@@ -20,15 +23,11 @@ int main()
 
 void gui()
 {
-    cout<<"Enter your name: \n";
-    cin>>name;
-
-    cout<<"Hello "<<name<<", please select the service:\n";
     cout<<  "A: Investment projection\n"
         <<  "B: Retirement planning\n"
         <<  "C: Mortgage\n" 
         <<  "D: College fund\n"
-        <<  "E: Exit";
+        <<  "E: Exit\n";
 
     cin>>input;
     input=tolower(input);
@@ -42,11 +41,13 @@ void gui()
         lab3();
         break;
     case 'c' || 'd':
-        cout<<"Service coming soon.";
+        cout<<"Service coming soon.\n";
         break;
     case 'e':
-        cout<<"Thank you";
+        cout<<"Thank you\n";
     default:
+        cout<<"Input Invalid\n";
+        gui();
         break;
     }
 }
